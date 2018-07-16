@@ -1,11 +1,14 @@
 基于ThinkPHP 5.1框架开发的个人博客
 ===============
 个人博客使用了已下技术；
+
 后台：PHP、Mysql、ThinkPHP、Querylist爬虫；
+
 前端：HTML、CSS、JQuery、Ajax、Bootstrap；
 
 
 实现了下列功能：
+
 1、用户注册登录；
 
 2、文章发布更新；
