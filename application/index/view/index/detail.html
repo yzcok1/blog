@@ -16,16 +16,8 @@
                 <p>作者:{$art.user_id|getUserName}&nbsp;&nbsp;
                发布时间:{$art.create_time}&nbsp;&nbsp;
                浏览:{$art.pv}&nbsp;&nbsp;
-			  <!--  <a class="" id="fav" user_id="{$art.user_id}" article_id="{$art.id}" session_id="{$Think.session.user_id}">
-			   <span id="fav_logo" class="glyphicon glyphicon-star black" aria-hidden="true"></span>
-			   </a>
-			   <a class=" " id="like" user_id="{$art.user_id}" article_id="{$art.id}" session_id="{$Think.session.user_id}">
-			   <span id="like_logo" class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-			   </a> -->
 			   </p>
                <div >{:htmlspecialchars_decode($art.content)}</div>
-			   <!-- <div >{$art.content}</div> -->
-              
 
 			<div class="ContentItem-actions">
 				<span>

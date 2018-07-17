@@ -5,10 +5,7 @@ use think\Model;
 
 class Article extends Model 
 {
-	/* public function comment()
-    {
-        return $this->hasOne('Comment','article_id');
-    } */
+	
 	//默认主键
 	protected $pk = 'id';
 

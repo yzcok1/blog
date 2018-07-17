@@ -1,6 +1,6 @@
 基于ThinkPHP 5.1框架开发的个人博客
 ===============
-个人博客使用了已下技术；
+个人博客使用了已下技术搭建；
 
 后台：PHP、Mysql、ThinkPHP、Querylist爬虫；
 
@@ -15,6 +15,8 @@
 
 3、文章评论回复；
 
+4、文章点赞收藏；
+
 5、前端页面展示；
 
 6、后台网站、用户、文章的管理；
@@ -25,7 +27,7 @@
 
 网站后台URL: admin/user/login 
 
-文章爬虫URL: index/test3/index
+文章爬虫URL: index/test3/index 或 index/test4/index
 
 网站数据库文件：zh_sql
 
