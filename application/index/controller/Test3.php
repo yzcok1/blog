@@ -14,7 +14,7 @@ public function index(){
 				'地址'=>array('.news-item>h2>a','href'),
 			])->query()->getData();
 			$count=count($data_src);
-			echo $count.'<br>';
+			//echo $count.'<br>';
 			 for ($i=0; $i<10; $i++) {//for开始
 		$url=($data_src[$i]['地址']);
         //echo $url;
@@ -22,12 +22,9 @@ public function index(){
 		$this->get_acticle($url);
 	
 		$this->get_image($url);
-		
-		
 	
-			//$this->success('成功','index/index');
-		
         }
+		$this->success('成功','index/index');
     }
 	
 	//---------------------------------------------------------------------------
@@ -41,24 +38,7 @@ public function index(){
 			'title_img'=>array('.img_wrapper>img:first','src')
 		])
 		->query()->getData();
-		
-		
-		/* foreach($data_acticle as $key=>$val){
 			
-			// $data_acticle[$key]['title_img'].'<br>';
-			//$pathinfo =$data_acticle[$key]['title_img'];
-			//$data_acticle[$key]['title_img']=$pathinfo['filename'].'.'.$pathinfo['extension'];
-				//echo $pic_name.'<br>';
-				
-				//$data_acticle['title_img']=$pathinfo['filename'].'.'.$pathinfo['extension'];
-				//echo $image.'<br>';
-				
-				
-				//$data_acticle[0]['title_img']=1;
-		} */
-		//echo $image;
-		
-		
 		foreach($data_acticle as $data_acticle){
 				$data_acticle['user_id'] =9;
 				$data_acticle['is_hot'] =0 ;

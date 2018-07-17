@@ -178,7 +178,6 @@ class Index extends Base
             return ['status'=>0, 'message'=>'已取消收藏'];      
         }
 
-        //思考: 如果验证用户是否登录?
     }
 	// 用户点赞
     public function like()

@@ -14,26 +14,21 @@ public function index(){
 				'地址'=>array('.ty-card-type10-makeup>a','href'),
 			])->query()->getData();
 			$count=count($data_src);
-			echo $count.'<br>';
+			//echo $count.'<br>';
 			 for ($i=0; $i<5; $i++) {//for开始
 		$url=($data_src[$i]['地址']);
 		 if ( strpos($url, 'http://')==false ){
              $url = $url;
         }else{
             //$url = substr($url, 0,strpos($url, ':',5)+0);
-			$url=trim(strrchr( $url, ':'),':');
-			
+			$url=trim(strrchr( $url, ':'),':');	
         } 
-        //echo $url.'<br>';
-		
 		$this->get_acticle($url);
 		$this->get_image($url);
 		
-		
-		//$this->success('成功','index/index');
         }
+		$this->success('成功','index/index');	
     }
-	
 	//---------------------------------------------------------------------------
 	public function get_acticle($url){//获取文章信息
 		$data_acticle = QueryList::get($url)
@@ -45,23 +40,6 @@ public function index(){
 			'title_img'=>array('.img_wrapper>img:first','src')
 		])
 		->query()->getData();
-		
-		
-		/* foreach($data_acticle as $key=>$val){
-			
-			// $data_acticle[$key]['title_img'].'<br>';
-			//$pathinfo =$data_acticle[$key]['title_img'];
-			//$data_acticle[$key]['title_img']=$pathinfo['filename'].'.'.$pathinfo['extension'];
-				//echo $pic_name.'<br>';
-				
-				//$data_acticle['title_img']=$pathinfo['filename'].'.'.$pathinfo['extension'];
-				//echo $image.'<br>';
-				
-				
-				//$data_acticle[0]['title_img']=1;
-		} */
-		//echo $image;
-		
 		
 		foreach($data_acticle as $data_acticle){
 				$data_acticle['user_id'] =9;
@@ -75,16 +53,12 @@ public function index(){
 				$data_acticle['title_img'] =date("Y-m-d").'/'.trim(strrchr($data_acticle['title_img'], '/'),'/'); 	
 			}
 		
-	print_r($data_acticle)."<br>";
+	//print_r($data_acticle)."<br>";
 		$result=Article::create($data_acticle);
 		Article::where('title','')->delete();
 		Article::where('title_img',date("Y-m-d").'/test.jpg')->delete();
 		
-		
-		
-	
 	}//结束获取文章信息
-	
 	
 	//----------------------------------------------------------------------------
 	public function get_image($url){//获取图片信息
@@ -103,7 +77,6 @@ public function index(){
         //echo '<br>'.$i.'、搜索地址：'. $url . "共找到 " . $photo_num . " 张图片<br>";
 		
         foreach ($img_out as $k => $v){
- 
             //$img_out[$k]['img'] = "<img src='".$v['link_url']."' />";
 			//echo '图片地址：'.($v['link_url']).'<br>';
             $this->save_one_img($url,$v['link_url']);
@@ -130,7 +103,7 @@ public function index(){
 			$img_url='http:'.$img_url;
         } 
 		$img_url =$img_url;
-		echo $img_url.'<br>';
+		//echo $img_url.'<br>';
         $pathinfo = pathinfo($img_url);    //获取图片路径信息
 		//echo $pathinfo.'<br>';
         $pic_name=$pathinfo['filename'].'.'.$pathinfo['extension'];//(自定义名称)
