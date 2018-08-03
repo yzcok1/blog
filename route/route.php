@@ -14,7 +14,8 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
-
+Route::domain('api','api');
+Route::rule('user/:id','user/index');
 return [
 
 ];

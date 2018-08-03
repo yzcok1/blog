@@ -80,11 +80,11 @@ return [
     // 路由使用完整匹配
     'route_complete_match'   => false,
     // 是否强制使用路由
-    'url_route_must'         => false,
+    'url_route_must'         => true,
     // 使用注解路由
     'route_annotation'       => false,
     // 域名部署
-    'url_domain_deploy'      => false,
+    'url_domain_deploy'      => true,
     // 域名根，如thinkphp.cn
     'url_domain_root'        => '',
     // 是否自动转换URL中的控制器和操作名
